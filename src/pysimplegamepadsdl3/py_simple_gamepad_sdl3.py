@@ -74,7 +74,7 @@ class GamepadState:
 
 @dataclass(frozen=True)
 class Gamepad:
-    gamepad_state_dict: DictProxy[SDL_JoystickID, GamepadState]
+    gamepad_state_dict: DictProxy  # DictProxy[SDL_JoystickID, GamepadState]
     sdl_wait_event_timeout_ms: int = int(1e3 / 120)  # Default 120 Hz
     stop_event: Event = field(default_factory=mp.Event)
     worker_process: mp.Process = field(init=False)
