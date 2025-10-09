@@ -1,18 +1,17 @@
 [project]
-name = "pysimplegamepadsdl3"
-version = "0.1.0"
-description = "A thin wrapper to wrap SDL3 Gamepad API in a process."
-authors = [
-    { name = "Yifei Liu", email = "34564223+EzekielDaun@users.noreply.github.com" },
-]
-readme = "README.md"
-requires-python = ">=3.10"
-dependencies = ["pysdl3 (>=0.9.8b7,<0.10.0)"]
-
-[tool.poetry]
-packages = [{ include = "pysimplegamepadsdl3", from = "src" }]
-
+    authors = [
+        { name = "Yifei Liu", email = "34564223+EzekielDaun@users.noreply.github.com" },
+    ]
+    dependencies = ["pysdl3>=0.9.8b7,<0.10.0"]
+    description = "A thin wrapper to wrap SDL3 Gamepad API in a process."
+    name = "pysimplegamepadsdl3"
+    readme = "README.md"
+    requires-python = ">=3,<4"
+    version = "0.1.0"
 
 [build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
-build-backend = "poetry.core.masonry.api"
+    build-backend = "hatchling.build"
+    requires      = ["hatchling>=1.25.0"]
+
+[tool.hatch.build.targets.wheel]
+    packages = ["src/pysimplegamepadsdl3"]
